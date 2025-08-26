@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="com.john.ui5.ts.app1.controller.Detail"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <Page id="detailPage" title="{i18n>detailTitle}">
+        <content>
+            <Wizard id="orderWizard" showProgress="true" height="600px">
+                <WizardStep id="ackStep" title="{i18n>stepAck}" complete="{path: 'ackComplete'}">
+                    <Text text="{i18n>ackText}" />
+                </WizardStep>
+                <WizardStep id="formStep" title="{i18n>stepForm}" complete="{path: 'formComplete'}">
+                    <VBox>
+                        <Input id="orderName" placeholder="{i18n>orderNamePlaceholder}" />
+                        <Input id="orderQty" placeholder="{i18n>orderQtyPlaceholder}" type="Number" />
+                    </VBox>
+                </WizardStep>
+                <WizardStep id="paymentStep" title="{i18n>stepPayment}" complete="{path: 'paymentComplete'}">
+                    <Text text="{i18n>paymentText}" />
+                </WizardStep>
+                <WizardStep id="reviewStep" title="{i18n>stepReview}" complete="{path: 'reviewComplete'}">
+                    <VBox>
+                        <Text id="reviewSummary" text="{i18n>reviewSummary}" />
+                        <HBox>
+                            <Button id="confirmButton" text="{i18n>confirm}" press="onConfirm" />
+                            <Button id="cancelButton" text="{i18n>cancel}" press="onCancel" />
+                        </HBox>
+                    </VBox>
+                </WizardStep>
+            </Wizard>
+        </content>
+    </Page>
+
+</mvc:View>
